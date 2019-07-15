@@ -372,3 +372,11 @@ int ProcessParser::getNumberOfRunningProcesses() {
     }
     return result;
 }
+
+bool ProcessParser::isPidExisting(string pid) {
+    for (string p: ProcessParser::getPidList())
+        if (p.compare(pid) == 0)
+            return true;
+    
+    return false;
+}
